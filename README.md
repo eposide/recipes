@@ -8,6 +8,10 @@ that makes up the system :
            of the recipes.
 - recipebook : provides api methods to upload and search for recipes
 
+### core 
+The core component is used by both the server and the recipebook services. 
+
+
 ### server
 The server component and provides a database that will host all the recipes that are uploaded. 
 Because it uses a embedded version of H2 it exposes the database via a TCP port providing a way for the
@@ -41,11 +45,11 @@ Both the server and recipebook components have a dependency on the core componen
 
 - Start the server component. Ensure that port 8080 and 9090 is available for use.
 
-      java -jar server-0.0.1-SNAPSHOT.jar
+      java -jar server\target\server-0.0.1-SNAPSHOT.jar
 
 - Start the recipebook component. Ensure that port 8081 is available
 
-      java -jar recipebook-0.0.1-SNAPSHOT.jar
+      java -jar recipebook\target\recipebook-0.0.1-SNAPSHOT.jar
       
  
 ### Usage
@@ -62,9 +66,18 @@ A description of the api is provided through a swagger user interface.
 
      http://localhost:8081/swagger-ui.html
 
+#### Next steps
+Once the two services are up and running the following steps can be followed to create 
+a recipe and to be able to search for it. 
+
+- Use the Upload api to create a recipe see an example of the JSON below also a 
+  curl command for ease of use
+- Once the recipe is uploaded the server component will categorise the recipe after 
+  which it will be available through the search api - The schedule is set to run every 15 seconds
+- Use the search operations to find the uploaded recipe by supply search terms (e.g. "%pasta%)
+
 
 ## Sample data
-
 
 ### Upload Recipe 
 #### Example 1 - Salmon with a creamy sauce
