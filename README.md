@@ -8,6 +8,8 @@ that makes up the system :
            of the recipes.
 - recipebook : provides api methods to upload and search for recipes
 
+![alt text](./recipes.png?raw=true "Recipes Overview")
+
 ### core 
 The core component is used by both the server and the recipebook services. 
 
